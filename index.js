@@ -17,7 +17,7 @@ HTTP_Server.use(express.json())
 // Start Server
 const PORT = process.env.PORT || 5000;
 
-HTTP_Server.listen(PORT, () => {
+HTTP_Server.listen(PORT,'0.0.0.0',() => {
     try {
         console.log(`Server running on port ${PORT}`);
     } catch (error) {
