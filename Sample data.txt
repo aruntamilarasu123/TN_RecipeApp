@@ -1,0 +1,39 @@
+Sample Data 1
+{
+    "name": "Chicken Biryani",
+    "ingredients": ["Basmati Rice", "Chicken", "Onions", "Yogurt", "Tomatoes", "Spices", "Oil"],
+    "instructions": "Marinate chicken with yogurt, spices, and salt for 30 mins. Heat oil in a pot, sauté onions till golden. Add tomatoes and cook till soft. Add marinated chicken and cook for 10 mins. Add soaked rice and water (1:2 ratio). Cover and cook till rice is done. Garnish with fried onions before serving.",
+    "type": "Non-Veg"
+}
+
+Sample Data 2
+{
+    "name": "Chicken Biryani",
+    "ingredients": ["Basmati Rice", "Chicken", "Onions", "Yogurt", "Tomatoes", "Spices", "Oil"],
+    "instructions": "Marinate chicken with yogurt, spices, and salt for 30 mins. Heat oil in a pot, sauté onions till golden. Add tomatoes and cook till soft. Add marinated chicken and cook for 10 mins. Add soaked rice and water (1:2 ratio). Cover and cook till rice is done. Garnish with fried onions before serving.",
+    "type": "Non-Veg"
+}
+
+Sample Data 3
+{
+    "name": "Paneer Butter Masala",
+    "ingredients": ["Paneer", "Tomatoes", "Onions", "Cream", "Butter", "Spices", "Oil"],
+    "instructions": "Heat butter in a pan. Add onions and sauté till soft. Add tomato puree and spices, cook until oil separates. Add paneer cubes and mix well. Add cream, simmer for 5 minutes. Serve hot with naan or rice.",
+    "type": "Veg"
+}
+
+Sample Data 4
+{
+    "name": "Masala Dosa",
+    "ingredients": ["Dosa Batter", "Potatoes", "Onions", "Mustard Seeds", "Curry Leaves", "Spices", "Oil"],
+    "instructions": "Prepare the potato filling by sautéing mustard seeds, onions, and spices, then add boiled potatoes. Spread dosa batter on a hot tawa, drizzle oil, and cook one side. Add potato filling in center, fold dosa, and serve hot with chutney and sambar.",
+    "type": "Veg"
+}
+
+Sample Data 5
+{
+    "name": "Egg Curry",
+    "ingredients": ["Eggs", "Onions", "Tomatoes", "Spices", "Oil", "Coriander"],
+    "instructions": "Boil eggs and peel. Heat oil, sauté onions till golden, add tomatoes and spices, cook till soft. Add eggs and simmer for 10 minutes. Garnish with coriander leaves. Serve with rice or roti.",
+    "type": "Non-Veg"
+}
