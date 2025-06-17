@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍽️ Recipes CRUD API Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+  <div class="max-w-4xl mx-auto p-6 bg-white shadow-md my-10 rounded-lg">
+    <h1 class="text-4xl font-bold text-center mb-6">🍽️ Recipes CRUD API</h1>
+
+    <p class="mb-4 text-lg">
+      This RESTful API allows you to perform full CRUD (Create, Read, Update, Delete) operations on recipes.
+      Built using <strong>Node.js</strong>, <strong>Express.js</strong>, <strong>MongoDB</strong>, and <strong>Mongoose</strong> with an <strong>MVC architecture</strong> for organized and maintainable code.
+    </p>
+
+    <p class="mb-4">
+      You can test all API endpoints using the buttons below or tools like Postman.
+    </p>
+
+    <div class="mb-6 text-center space-x-4">
+      <a href="https://tn-recipe-api.onrender.com/v1/recipes" target="_blank" rel="noopener noreferrer">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow">
+          🚀 Test CRUD Operations
+        </button>
+      </a>
+      <a href="https://github.com/aruntamilarasu123/TN_RecipeApp.git" target="_blank" rel="noopener noreferrer">
+        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 py-2 rounded shadow">
+          📁 GitHub Repo
+        </button>
+      </a>
+    </div>
+
+    <hr class="my-6">
+
+    <p class="text-center text-gray-700">
+      <strong>Base URL:</strong> <code class="bg-gray-200 px-2 py-1 rounded">https://tn-recipe-api.onrender.com/API Endpoints</code>
+    </p>
+
+    <hr class="my-6">
+
+    <h2 class="text-2xl font-semibold mb-4">📮 API Endpoints</h2>
+    <table class="table-auto w-full mb-6 text-left border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Method</th>
+          <th class="border px-4 py-2">Endpoint</th>
+          <th class="border px-4 py-2">Description</th>
+          <th class="border px-4 py-2">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">POST</td>
+          <td class="border px-4 py-2">/v1/recipe/create</td>
+          <td class="border px-4 py-2">Create a new recipe</td>
+          <td class="border px-4 py-2 text-blue-600"><a href="https://tn-recipe-api.onrender.com/v1/recipes/create" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">GET</td>
+          <td class="border px-4 py-2">/v1/recipe/</td>
+          <td class="border px-4 py-2">Get all recipes</td>
+          <td class="border px-4 py-2 text-blue-600"><a href="https://tn-recipe-api.onrender.com/v1/recipes" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">GET</td>
+          <td class="border px-4 py-2">/v1/recipe/:id</td>
+          <td class="border px-4 py-2">Get a recipe by ID</td>
+          <td class="border px-4 py-2 text-blue-600"><a href="https://tn-recipe-api.onrender.com/v1/recipes/{id}" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">PUT</td>
+          <td class="border px-4 py-2">/v1/recipe/update/:id</td>
+          <td class="border px-4 py-2">Update a recipe</td>
+          <td class="border px-4 py-2 text-blue-600"><a href="https://tn-recipe-api.onrender.com/v1/recipes/update/{id}" target="_blank">View</a></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">DELETE</td>
+          <td class="border px-4 py-2">/v1/recipe/delete/:id</td>
+          <td class="border px-4 py-2">Delete a recipe</td>
+          <td class="border px-4 py-2 text-blue-600"><a href="https://tn-recipe-api.onrender.com/v1/recipes/delete/{id}" target="_blank">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="my-6">
+
+    <h2 class="text-2xl font-semibold mb-2">📘 Sample Request: Create Recipe</h2>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto">
+POST /v1/recipes/create
+Content-Type: application/json
+
+{
+  "name": "Vegetable Pulao",
+  "ingredients": ["Basmati Rice", "Carrots", "Peas", "Beans", "Onions", "Spices", "Oil"],
+  "instructions": "Heat 2 tbsp oil in a pressure cooker...",
+  "type": "Veg"
+}
+    </pre>
+
+    <h3 class="text-xl font-semibold mb-1 text-green-700">✅ Success Response (201)</h3>
+    <pre class="bg-green-50 border border-green-200 p-4 rounded text-sm mb-4 overflow-x-auto">
+{
+  "message": "Recipe Successfully Created",
+  "success": true,
+  "result": {
+    "_id": "6850fcb284e914c0f38ddb6f",
+    ...
+  }
+}
+    </pre>
+
+    <h3 class="text-xl font-semibold mb-1 text-red-700">❌ Error Response (500)</h3>
+    <pre class="bg-red-50 border border-red-200 p-4 rounded text-sm mb-4 overflow-x-auto">
+{
+  "message": "Recipe Creation Error",
+  "success": false,
+  "error": "recipes validation failed: type: Path `type` is required."
+}
+    </pre>
+
+    <hr class="my-6">
+  </div>
+
+</body>
+</html>

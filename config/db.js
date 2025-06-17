@@ -1,4 +1,3 @@
-//
 const mongoose = require('mongoose');
 
 //DB Connection
@@ -12,16 +11,3 @@ const connectDB = async () => {
   }
 };
 module.exports = connectDB;
-
-
-// const URI = `mongodb://localhost:27017/recipesapp`;
-
-// (() => {
-//     mongoose.connect(URI).then((result) => {
-//         if(result){
-//             console.log("Mongodb connection succusfull")
-//         }
-//     }).catch((error)=>{
-//             console.log("Mongodb connection unsuccusfull", error)
-//     })
-// })();
