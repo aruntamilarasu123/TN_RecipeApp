@@ -1,220 +1,259 @@
-# Recipes CRUD App
+# 🍽️ Recipes CRUD API
 
-## Description
-A simple CRUD API for managing recipes using Node.js, Express, MongoDB, and Mongoose. Follows the MVC pattern.
+A simple RESTful API for managing recipes using **Node.js**, **Express.js**, **MongoDB**, and **Mongoose**, following the **MVC pattern**.
 
-## Tech Stack
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- Postman (for API documentation)
+---
 
-## Setup Instructions
-1. Clone the repo.
-2. Run `npm install`.
-3. Start server with `npm start`.
+## 🚀 Tech Stack
 
-## Postman Documentation
-Create a Postman collection with these endpoints:
+* **Node.js**
+* **Express.js**
+* **MongoDB** with **Mongoose**
+* **Postman** (for API testing & documentation)
 
-## API Endpoints
+---
 
-| Method | Endpoint                  | Description         |
-|--------|---------------------------|---------------------|
-| POST   | /v1/recipes/create        | Create a recipe     |
-| GET    | /v1/recipes               | Get all recipes     |
-| GET    | /v1/recipes/:id           | Get recipe by ID    |
-| PUT    | /v1/recipes/update/:id    | Update recipe       |
-| DELETE | /v1/recipes/delete/:id    | Delete recipe       |
+## 📦 Setup Instructions
 
-- 1. Create a new recipe: Send a POST request to `/v1/recipes/create`.
-    - Methode: POST
-    - Url: {{base_url}}/v1/recipes/create.
-    - Body (raw JSON): (Sample Data)
-        {
-            "name": "Vegetable Pulao",
-            "ingredients": ["Basmati Rice", "Carrots", "Peas", "Beans", "Onions", "Spices", "Oil"],
-            "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-            "type": "Veg"
-        }
-        
-    - Sample Response true(Status code:201):
-        {
-            "message": "Recipe Successfully Created",
-            "success": true,
-            "result": {
-                "name": "Vegetable Pulao",
-                "ingredients": [
-                    "Basmati Rice",
-                    "Carrots",
-                    "Peas",
-                    "Beans",
-                    "Onions",
-                    "Spices",
-                    "Oil"
-                ],
-                "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-                "type": "Veg",
-                "_id": "6850fcb284e914c0f38ddb6f",
-                "__v": 0
-            }
-        }
+1. **Clone the repository**
 
-    - Sample Response false(Status code:500):
-        {
-            "message": "Recipe Creation Error",
-            "success": false,
-            "error": "recipes validation failed: type: Path `type` is required."
-        }
+   ```bash
+   git clone https://github.com/aruntamilarasu123/TN_RecipeApp.git
+   cd tnrecipeapp
+   ```
 
+2. **Install dependencies**
 
-2. Get all recipes: Send a GET request to `/v1/recipes`.
-    - Methode: GET
-    - Url: {{base_url}}/v1/recipes/.
-    - Sample Response true(Status code:200):
-        {
-            "message": "Recipes GET Request Successfull",
-            "success": true,
-            "result": [
-                {
-                    "_id": "6850fcb284e914c0f38ddb6f",
-                    "name": "Vegetable Pulao",
-                    "ingredients": [
-                        "Basmati Rice",
-                        "Carrots",
-                        "Peas",
-                        "Beans",
-                        "Onions",
-                        "Spices",
-                        "Oil"
-                    ],
-                    "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-                    "type": "Veg",
-                    "__v": 0
-                }
-            ]
-        }   
+   ```bash
+   npm install
+   ```
 
-    - Sample Response false(Status code:500):
-        {
-            "message": "Error fetching recipe",
-            "success": false
-        }
+3. **Start the server**
 
-3. Get a recipe by ID: Send a GET request to `/v1/recipes/:id.
-    - Methode: GET
-    - Url: {{base_url}}/v1/recipes/:id.
-    - Sample Response true(Status code:200):
-        {
-            "message": "Recipe Fetched Succussfully",
-            "success": true,
-            "result": {
-                "_id": "6850fcb284e914c0f38ddb6f",
-                "name": "Vegetable Pulao",
-                "ingredients": [
-                    "Basmati Rice",
-                    "Carrots",
-                    "Peas",
-                    "Beans",
-                    "Onions",
-                    "Spices",
-                    "Oil"
-                ],
-                "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-                "type": "Veg",
-                "__v": 0
-            }
-        }
+   ```bash
+   npm start
+   ```
 
-    - Sample Response false(Status code:404):
-        {
-            "message": "Recipe Not Found",
-            "success": false
-        }
+> Make sure your MongoDB instance is running or provide a valid MongoDB URI in your environment variables.
 
-    - Sample Response false(Status code:500):
-        {
-            "message": "Error fetching recipe",
-            "success": false
-        }
+---
 
-4. Update a recipe: Send a PUT request to `/v1/recipes/update/:id`.
-    - Methode: PUT
-    - Url: {{base_url}}/v1/recipes/update/:id.
-    - Body (raw JSON): (Sample Data)
-        {
-            "name":"Vegetable Pulao dish"
-        }
+## 📮 API Endpoints
 
-    - Sample Response true(Status code:200):
-        {
-            "message": "Recipe Successfully Updated",
-            "success": true,
-            "result": {
-                "_id": "6850fcb284e914c0f38ddb6f",
-                "name": "Vegetable Pulao dish",
-                "ingredients": [
-                    "Basmati Rice",
-                    "Carrots",
-                    "Peas",
-                    "Beans",
-                    "Onions",
-                    "Spices",
-                    "Oil"
-                ],
-                "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-                "type": "Veg",
-                "__v": 0
-            }
-        }
-    
-    - Sample Response false(Status code:404):
-        {
-            "message": "Recipe Not Found",
-            "success": false
-        } 
+Base URL: `{{base_url}}`
 
-    - Sample Response false(Status code:500):
-        {
-            "message": "Recipe update error",
-            "success": false
-        } 
+| Method | Endpoint                 | Description         |
+| ------ | ------------------------ | ------------------- |
+| POST   | `/v1/recipes/create`     | Create a new recipe |
+| GET    | `/v1/recipes`            | Get all recipes     |
+| GET    | `/v1/recipes/:id`        | Get recipe by ID    |
+| PUT    | `/v1/recipes/update/:id` | Update a recipe     |
+| DELETE | `/v1/recipes/delete/:id` | Delete a recipe     |
 
-5. Delete a recipe: Send a DELETE request to `/v1/recipes/delete/:id`.
-    - Methode: DELETE
-    - Url: {{base_url}}/v1/recipes/delete/:id.
-    - Sample Response true(Status code:200 ):
-        {
-            "message": "Recipe successfully deleted",
-            "success": true,
-            "result": {
-                "_id": "6850fcb284e914c0f38ddb6f",
-                "name": "Vegetable Pulao dish",
-                "ingredients": [
-                    "Basmati Rice",
-                    "Carrots",
-                    "Peas",
-                    "Beans",
-                    "Onions",
-                    "Spices",
-                    "Oil"
-                ],
-                "instructions": "Heat 2 tbsp oil in a pressure cooker. Add whole spices like bay leaf, cardamom, and cinnamon. Add sliced onions and sauté till golden. Add chopped vegetables and cook for 3-4 minutes. Add soaked rice, salt, and water (1:2 ratio). Close the lid and cook for 2 whistles on medium flame. Let it rest and fluff with a fork before serving.",
-                "type": "Veg",
-                "__v": 0
-            }
-        }
+---
 
-    - Sample Response false(Status code:404):
-        {
-            "message": "Recipe Not Found",
-            "success": false
-        } 
+## 📘 Endpoint Details
 
-    - Sample Response false(Status code:500):
-        {
-            "message": "Recipe Deletion Error",
-            "success": false
-        } 
+### 1. Create a Recipe
 
-This implementation provides a complete CRUD API with proper error handling, validation, and MongoDB integration following MVC architecture. The Postman documentation helps users test and understand the API endpoints.
+* **Method:** `POST`
+* **URL:** `/v1/recipes/create`
+* **Body (JSON):**
+
+```json
+{
+  "name": "Vegetable Pulao",
+  "ingredients": ["Basmati Rice", "Carrots", "Peas", "Beans", "Onions", "Spices", "Oil"],
+  "instructions": "Heat 2 tbsp oil in a pressure cooker...",
+  "type": "Veg"
+}
+```
+
+#### ✅ Success Response `201`
+
+```json
+{
+  "message": "Recipe Successfully Created",
+  "success": true,
+  "result": {
+    "_id": "6850fcb284e914c0f38ddb6f",
+    ...
+  }
+}
+```
+
+#### ❌ Error Response `500`
+
+```json
+{
+  "message": "Recipe Creation Error",
+  "success": false,
+  "error": "recipes validation failed: type: Path `type` is required."
+}
+```
+
+---
+
+### 2. Get All Recipes
+
+* **Method:** `GET`
+* **URL:** `/v1/recipes`
+
+#### ✅ Success Response `200`
+
+```json
+{
+  "message": "Recipes GET Request Successful",
+  "success": true,
+  "result": [...]
+}
+```
+
+#### ❌ Error Response `500`
+
+```json
+{
+  "message": "Error fetching recipe",
+  "success": false
+}
+```
+
+---
+
+### 3. Get a Recipe by ID
+
+* **Method:** `GET`
+* **URL:** `/v1/recipes/:id`
+
+#### ✅ Success Response `200`
+
+```json
+{
+  "message": "Recipe Fetched Successfully",
+  "success": true,
+  "result": { ... }
+}
+```
+
+#### ❌ Error Response `404`
+
+```json
+{
+  "message": "Recipe Not Found",
+  "success": false
+}
+```
+
+#### ❌ Error Response `500`
+
+```json
+{
+  "message": "Error fetching recipe",
+  "success": false
+}
+```
+
+---
+
+### 4. Update a Recipe
+
+* **Method:** `PUT`
+* **URL:** `/v1/recipes/update/:id`
+* **Body (JSON):**
+
+```json
+{
+  "name": "Vegetable Pulao dish"
+}
+```
+
+#### ✅ Success Response `200`
+
+```json
+{
+  "message": "Recipe Successfully Updated",
+  "success": true,
+  "result": { ... }
+}
+```
+
+#### ❌ Error Response `404`
+
+```json
+{
+  "message": "Recipe Not Found",
+  "success": false
+}
+```
+
+#### ❌ Error Response `500`
+
+```json
+{
+  "message": "Recipe update error",
+  "success": false
+}
+```
+
+---
+
+### 5. Delete a Recipe
+
+* **Method:** `DELETE`
+* **URL:** `/v1/recipes/delete/:id`
+
+#### ✅ Success Response `200`
+
+```json
+{
+  "message": "Recipe successfully deleted",
+  "success": true,
+  "result": { ... }
+}
+```
+
+#### ❌ Error Response `404`
+
+```json
+{
+  "message": "Recipe Not Found",
+  "success": false
+}
+```
+
+#### ❌ Error Response `500`
+
+```json
+{
+  "message": "Recipe Deletion Error",
+  "success": false
+}
+```
+
+---
+
+## 📂 Project Structure (MVC)
+
+```
+tnresipeapp/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── recipeController.js
+├── models/
+│   └── recipeModel.js
+├── routes/
+│   └── recipeRoutes.js
+└── index.js
+```
+
+---
+
+## 🧪 API Testing with Postman
+
+1. Open [Postman](https://www.postman.com/)
+2. Create a new collection called **"Recipes API"**
+3. Add the above endpoints and test with sample JSON bodies
+4. Save your environment with a `{{base_url}}` variable for easy switching
+
+---
