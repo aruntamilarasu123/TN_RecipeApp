@@ -27,6 +27,6 @@ HTTP_Server.listen(PORT, '0.0.0.0', () => {
 // Router
 HTTP_Server.use("/v1/recipes", RecipesRouter)
 
-HTTP_Server.use("/", async(req, res) => {
+HTTP_Server.use("/", (req, res) => {
     res.render('pages/index',)
 })
