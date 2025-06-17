@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../components/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>Simple book application</h1>
+    <p>Welcome to book application</p>
+    <p><%= pageName %></p>
+  </div>
+  <div class="container row">
+    <% books.forEach(function(book){ %>
+    <div class="card col-md-3">
+        <div class="card-body ">
+            <div>
+                <%= book.book_name %>
+            </div>
+            <div>
+                <%= book.book_published_year %>
+            </div>
+            <div>
+                <%= book.book_type %>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+  </div>
+</main>
+
+<footer>
+  <%- include('../components/footer'); %>
+</footer>
+
+</body>
+</html>
