@@ -26,12 +26,3 @@ HTTP_Server.listen(PORT, () => {
 
 // Router
 HTTP_Server.use("/v1/recipes", RecipesRouter)
-
-// Testing Server
-HTTP_Server.get('/', (req, res, next) => {
-    try {
-        console.log("GET Request Successfull")
-    } catch (error) {
-        console.log("Error From GET Request")
-    }
-})
