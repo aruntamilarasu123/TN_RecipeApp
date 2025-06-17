@@ -1,7 +1,3 @@
-Sure! Here's a polished, professional README.md file for your Recipes CRUD API project:
-
----
-
 # 🍽️ Recipes CRUD API
 
 A robust RESTful API for managing recipes, built with **Node.js**, **Express.js**, **MongoDB**, and **Mongoose**, following the **MVC architecture** for clean, scalable code.
